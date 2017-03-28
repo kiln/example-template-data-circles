@@ -8,8 +8,8 @@ import Popup from "@flourish/popup";
 // Anything the end user can configure in the settings panel must be in
 // this object. The settings in template.yml reference these property names.
 export var state = {
-	color: "#FF0000",
-	opacity: 1.0
+	color: "#4f24ff",
+	opacity: 0.5
 };
 
 // Flourish puts the data in here
