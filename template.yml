@@ -1,0 +1,47 @@
+id: data-circles
+name: Data circles
+author: Flourish team
+sdk_version: 2
+
+settings:
+  - property: color
+    name: Color
+    description: The color of the circles
+    type: color
+  - property: opacity
+    name: Opacity
+    description: The opacity of the circles
+    type: number
+    min: 0
+    max: 1
+    step: 0.05
+
+data:
+  - dataset: circles
+    key: x
+    name: x-value
+    type: column
+    column: Circles::A
+  - dataset: circles
+    key: y
+    name: y-value
+    type: column
+    column: Circles::B
+  - dataset: circles
+    key: size
+    name: Size
+    type: column
+    column: Circles::C
+  - dataset: circles
+    key: word
+    name: word
+    type: column
+    column: Circles::D
+
+build:
+  javascript:
+    script: npm run build
+    directory: src
+    files:
+      - package.json
+      - rollup.config.js

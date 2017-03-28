@@ -1,0 +1,30 @@
+{
+  "name": "@flourish/template-examples-data-circles",
+  "version": "1.0.0",
+  "description": "Flourish sample template: data-circles",
+  "main": "index.js",
+  "directories": {},
+  "dependencies": {
+    "@flourish/popup": "^1.1.1",
+    "d3-selection": "^1.0.3",
+    "d3-transition": "^1.0.3",
+    "rollup": "^0.41.4",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-uglify": "^1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kiln/example-template-data-circles.git"
+  },
+  "author": "Kiln Enterprises Ltd",
+  "license": "BSD-3-Clause",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/kiln/example-template-data-circles/issues"
+  },
+  "homepage": "https://github.com/kiln/example-template-data-circles#readme"
+}
