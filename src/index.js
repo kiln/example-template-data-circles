@@ -36,6 +36,15 @@ export function draw() {
 	});
 }
 
+function setAttributes(selection_or_transition) {
+	selection_or_transition
+		.attr("fill", state.color)
+		.attr("opacity", state.opacity)
+		.attr("cx", function(d) { return d.x * w; })
+		.attr("cy", function(d) { return d.y * h; })
+		.attr("r", function(d) { return Math.sqrt(d.size); });
+}
+
 // The update function is called when the user changes a state property in
 // the settings panel or presentation editor. It updates elements to reflect
 // the current state.
@@ -46,19 +55,13 @@ export function update() {
 
 	var circles = svg.selectAll("circle").data(data.circles);
 
-	circles = circles.enter().append("circle")
+	circles.enter().append("circle")
 		.on("click", function(d) {
 			popup.point(d.x * w, d.y * h).html(d.word).draw();
 			event.stopPropagation();
 		})
-		.merge(circles);
+		.call(setAttributes);
 
-	circles.transition()
-		.attr("fill", state.color)
-		.attr("opacity", state.opacity)
-		.attr("cx", function(d) { return d.x * w; })
-		.attr("cy", function(d) { return d.y * h; })
-		.attr("r", function(d) { return Math.sqrt(d.size); });
-
+	circles.transition().call(setAttributes);
 	circles.exit().remove();
 }
