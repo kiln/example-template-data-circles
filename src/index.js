@@ -19,16 +19,20 @@ var w, h, svg, popup = Popup();
 
 // Initialise the graphic
 export function draw() {
-	w = window.innerWidth;
-	h = window.innerHeight;
-	svg = select(document.body).append("svg").attr("width", w).attr("height", h)
-		.on("click", function() { popup.hide(); });
-	update();
+	function redraw() {
+		w = window.innerWidth;
+		h = window.innerHeight;
+		svg = select(document.body).append("svg").attr("width", w).attr("height", h)
+			.on("click", function() { popup.hide(); });
+		update();
+	}
+
+	redraw();
 
 	// Redraw everything if the window is resized
 	window.addEventListener("resize", function() {
-		select("svg").remove();
-		draw();
+		svg.remove();
+		redraw();
 	});
 }
 
