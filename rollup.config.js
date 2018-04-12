@@ -2,11 +2,13 @@
      uglify = require("rollup-plugin-uglify");
 
 export default {
-  entry: "src/index.js",
-  format: "iife",
-  moduleName: "template",
-  dest: "template.js",
-  sourceMap: true,
+  input: "src/index.js",
+  output: {
+    format: "iife",
+    name: "template",
+    file: "template.js",
+    sourceMap: true,
+  },
 
   // d3 relies on the node-resolve plugin
   plugins: [
